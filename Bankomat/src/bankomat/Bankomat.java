@@ -20,7 +20,6 @@ public class Bankomat extends UrzadzenieElektrczne {
     List<String> arch = new ArrayList<String>();
     
     
-    //Konstrutor Bankomatu
     public Bankomat(String bank,String lokalizacja, int haslo, int maxLiczbaTransakcji) {
         this.bank=bank;
         this.lokalizacja=lokalizacja;
@@ -29,7 +28,6 @@ public class Bankomat extends UrzadzenieElektrczne {
     }
    
     
-    //Dodanie transkacji
     private void dodajTransakcje(TransakcjaBankomat transakcja) {
         if(index+1<archiwum.length) {
             arch.add(transakcja.toString());
@@ -39,7 +37,6 @@ public class Bankomat extends UrzadzenieElektrczne {
             System.out.println("Brak miejsca na transakcje");
     }
        
-   //Wypisanie transkacji
     public String toString() {
         System.out.println("WSZYSTKIE TRANSAKCJE");
         if(index == -1) {
@@ -59,7 +56,7 @@ public class Bankomat extends UrzadzenieElektrczne {
         if(this.haslo==haslo) {
       
             if(this.exist==true) {
-                System.out.println("Transakcje z dnia "+ data);
+            	infoBox.InfoBox("Transakcje z dnia "+ data,"Transakcje");
                 for(int i=0;i<=index;i++) {
                 	infoBox.InfoBox(arch.get(i), "Transakcja "+i);
                 }
@@ -69,7 +66,6 @@ public class Bankomat extends UrzadzenieElektrczne {
         else
         	infoBox.InfoBox("Z³e has³o, brak dostepu","Transakcje");
     }
-   
    
     public void reset(int haslo) {
         if(this.haslo == haslo) {
@@ -90,16 +86,15 @@ public class Bankomat extends UrzadzenieElektrczne {
     public void wplata(double kwota) {
         if(karta!=null && karta.isOdblokowana()) {
             if(karta.getKonto().getBank().equals(this.bank)) {
-                karta.getKonto().wplata(kwota);
+            	infoBox.InfoBox(karta.getKonto().wplata(kwota),"Wp³ata!");
                 dodajTransakcje(new TransakcjaBankomat("wplata",kwota,karta.getKonto()));
                 this.exist=true;
             }
             else {
                 kwota = kwota * 0.95;
-                karta.getKonto().wplata(kwota);
+            	infoBox.InfoBox(karta.getKonto().wplata(kwota),"Wp³ata!");
                 dodajTransakcje(new TransakcjaBankomat("wplata z innego banku ",kwota,karta.getKonto()));
             }
-        	infoBox.InfoBox("Wyplacono: " + kwota, "Wp³ata");
         }
         else
         	infoBox.InfoBox("Wloz karte!","Karta");
@@ -110,7 +105,7 @@ public class Bankomat extends UrzadzenieElektrczne {
         if(karta!=null && karta.isOdblokowana()) {
             if(!karta.getKonto().getBank().equals(this.bank))
                 kwota = kwota * 1.05;
-            infoBox.InfoBox(karta.getKonto().wyplata(kwota),"Wyp³ata");   
+            infoBox.InfoBox(karta.getKonto().wyplata(kwota),"Wyp³ata!");   
             dodajTransakcje(new TransakcjaBankomat("wyplata",kwota,karta.getKonto()));
             this.exist=true;            
         }

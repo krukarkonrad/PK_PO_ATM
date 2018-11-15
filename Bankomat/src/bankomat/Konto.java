@@ -36,7 +36,7 @@ public class Konto {
    
     public void wyswietlTransakcje() {
         for(int i =0; i<=index;i++) {
-            System.out.println(archiwum[i]);
+            //System.out.println(archiwum[i]);
         }
     }
    
