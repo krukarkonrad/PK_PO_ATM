@@ -2,12 +2,13 @@ package app;
 //wyplata
 import java.awt.event.*;
 import javax.swing.*;
-
+import infoBox.InfoBox;
 import bankomat.Bankomat;
 
 
 class SecondButton extends JButton implements ActionListener {
-
+	
+	private InfoBox infoBox = new InfoBox();
 	private Bankomat bankomat1;
 	private double kwota;
 	private boolean ctrl;
@@ -22,19 +23,14 @@ class SecondButton extends JButton implements ActionListener {
 		this.bankomat1 = bankomat1;
 		addActionListener(this);
 	}
-	
-    public static void infoBox(String infoMessage, String titleBar)
-    {
-        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
-    }
-    
+	   
     public boolean inputBox() {
     	String temp;
     	temp= JOptionPane.showInputDialog(null,"Wprowadz kwote");
     	try {
     	this.kwota = Double.parseDouble(temp);
     	}catch (NumberFormatException e) {
-    		infoBox("Proszê o cyfry", "Blad");
+    		infoBox.InfoBox("Proszê podaæ cyfry", "Blad");
     		ctrl=false;
     		return(ctrl);
     	}
@@ -42,14 +38,12 @@ class SecondButton extends JButton implements ActionListener {
     	return(ctrl);
     }
     
-    
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		inputBox();
 		if(ctrl==true) {
-			String info = bankomat1.wyplata(this.kwota);
-			infoBox(info, "Rezultat");
+			bankomat1.wyplata(this.kwota);
 		} else 
-			infoBox("Blad", "Rezultat");
+			infoBox.InfoBox("Blad", "Rezultat");
 	}
 }

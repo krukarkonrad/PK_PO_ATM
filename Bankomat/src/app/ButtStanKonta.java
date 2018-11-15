@@ -17,19 +17,11 @@ public class ButtStanKonta extends JButton implements ActionListener{
 		super("Stan Konta");
 		this.bankomat1 = bankomat1;
 		addActionListener(this);
-	}
-	
-	
-    public static void infoBox(String infoMessage, String titleBar)
-    {
-        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
-    }
-        
+	}      
     
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String info = bankomat1.wyswietlStanKonta();
-		infoBox(info, "Rezultat");
+		bankomat1.wyswietlStanKonta();
 	}
 	
 }

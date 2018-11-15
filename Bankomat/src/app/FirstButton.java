@@ -3,11 +3,12 @@ package app;
 //WPLATA
 import java.awt.event.*;
 import javax.swing.*;
-
+import infoBox.InfoBox;
 import bankomat.Bankomat;
 
 class FirstButton extends JButton implements ActionListener, InputBox {
 
+	private InfoBox infoBox = new InfoBox();
 	private JPanel buttonPanel;
 	private Bankomat bankomat1;
 	private double kwota;
@@ -25,35 +26,14 @@ class FirstButton extends JButton implements ActionListener, InputBox {
 		this.bankomat1 = bankomat1;
 		addActionListener(this);
 	}
-
-    public static void infoBox(String infoMessage, String titleBar)
-    {
-        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
-    }
-    
-    /*
-    public boolean inputBox() {
-    	String temp;
-    	temp= JOptionPane.showInputDialog(null,"Wprowadz kwote");
-    	try {
-    	this.kwota = Double.parseDouble(temp);
-    	}catch (NumberFormatException e) {
-    		infoBox("Proszê o cyfry", "Blad");
-    		ctrl=false;
-    		return(ctrl);
-    	}
-    	ctrl = true;
-    	return(ctrl);
-    }
-    */
+   
     
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.kwota=inputBox();
 		if(this.kwota!=-1) {
-			String info = bankomat1.wplata(this.kwota);
-			infoBox(info, "Rezultat");
+			bankomat1.wplata(this.kwota);
 		}else
-			infoBox("Blad", "Rezultat");
+			infoBox.InfoBox("Blad", "Rezultat");
 	}
 }
