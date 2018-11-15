@@ -12,19 +12,19 @@ import bankomat.Bankomat;
 import bankomat.Karta;
 
 
-class ThirdButton extends JButton implements ActionListener {
+class Button01WsunKarte extends JButton implements ActionListener {
 
 	private JPanel buttonPanel;
 	private Bankomat bankomat1;
 	private Karta karta;
 	private int pin;
 	
-	ThirdButton() {
+	Button01WsunKarte() {
 		super("Wsun kart");
 		addActionListener(this);
 	}
 
-	ThirdButton(Bankomat bankomat1, Karta karta) {
+	Button01WsunKarte(Bankomat bankomat1, Karta karta) {
 		super("Wsun karte");
 		this.bankomat1 = bankomat1;
 		this.karta=karta;

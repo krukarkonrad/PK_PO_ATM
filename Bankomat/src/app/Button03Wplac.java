@@ -7,7 +7,7 @@ import infoBox.InfoBox;
 import bankomat.Bankomat;
 
 
-class FirstButton extends JButton implements ActionListener, InputBox {
+class Button03Wplac extends JButton implements ActionListener, InputBox {
 
 	private InfoBox infoBox = new InfoBox();
 	private JPanel buttonPanel;
@@ -15,13 +15,13 @@ class FirstButton extends JButton implements ActionListener, InputBox {
 	private double kwota;
 	private boolean ctrl;
 	
-	FirstButton(JPanel buttonPanel) {
+	Button03Wplac(JPanel buttonPanel) {
 		super("Wp³aæ");
 		this.buttonPanel = buttonPanel;
 		addActionListener(this);
 	}
 
-	FirstButton(JPanel buttonPanel, Bankomat bankomat1) {
+	Button03Wplac(JPanel buttonPanel, Bankomat bankomat1) {
 		super("Wp³aæ");
 		this.buttonPanel = buttonPanel;
 		this.bankomat1 = bankomat1;

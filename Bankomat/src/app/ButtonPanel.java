@@ -25,12 +25,12 @@ public class ButtonPanel extends JPanel {
 	}
 
 	public ButtonPanel(Bankomat bankomat1, Karta karta) {
-		wplata = new FirstButton(this, bankomat1);
+		wplata = new Button03Wplac(this, bankomat1);
 		wyplata	= new SecondButton(bankomat1);
-		zatwierdz= new ThirdButton(bankomat1,karta);
-		stanKonta = new ButtStanKonta(bankomat1);
-		WysTran = new ButtWysTran(bankomat1);
-		info = new InfoButton(bankomat1);
+		zatwierdz= new Button01WsunKarte(bankomat1,karta);
+		stanKonta = new Button04StanKonta(bankomat1);
+		WysTran = new Button05Trasakcje(bankomat1);
+		info = new Button06Info(bankomat1);
 		
 		setLayout(new GridLayout(6,1));
 		setPreferredSize(new Dimension(WIDTH, HEIGHT));

@@ -5,16 +5,16 @@ import javax.swing.*;
 import bankomat.Bankomat;
 
 
-public class ButtStanKonta extends JButton implements ActionListener{
+public class Button04StanKonta extends JButton implements ActionListener{
 
 	private Bankomat bankomat1;
 	
-	ButtStanKonta() {
+	Button04StanKonta() {
 		super("Stan");
 		addActionListener(this);
 	}
 
-	ButtStanKonta(Bankomat bankomat1) {
+	Button04StanKonta(Bankomat bankomat1) {
 		super("Stan Konta");
 		this.bankomat1 = bankomat1;
 		addActionListener(this);

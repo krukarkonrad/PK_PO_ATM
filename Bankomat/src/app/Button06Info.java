@@ -9,16 +9,16 @@ import javax.swing.JOptionPane;
 import bankomat.Bankomat;
 
 
-public class InfoButton extends JButton implements ActionListener {
+public class Button06Info extends JButton implements ActionListener {
 
 private Bankomat bankomat1;
 	
-	InfoButton() {
+	Button06Info() {
 		super("Cena");
 		addActionListener(this);
 	}
 
-	InfoButton(Bankomat bankomat1) {
+	Button06Info(Bankomat bankomat1) {
 		super("Info");
 		this.bankomat1 = bankomat1;
 		addActionListener(this);
