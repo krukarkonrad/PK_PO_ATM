@@ -8,36 +8,32 @@ import javax.swing.JPanel;
 import bankomat.Bankomat;
 import bankomat.Karta;
 
+
 public class ButtonPanel extends JPanel {
 	public static final int HEIGHT = 100;
 	public static final int WIDTH = 300;
 
-	private JButton wplata;
-	private JButton wyplata;
-	private JButton zatwierdz;
-	private JButton stanKonta;
-	private JButton WysTran;
-	private JButton info;
+	private JButton b1,b2,b3,b4,b5,b6;
 	
 	public ButtonPanel() {
 		
 	}
 
 	public ButtonPanel(Bankomat bankomat1, Karta karta) {
-		wplata = new FirstButton(this, bankomat1);
-		wyplata	= new SecondButton(bankomat1);
-		zatwierdz= new ThirdButton(bankomat1,karta);
-		stanKonta = new ButtStanKonta(bankomat1);
-		WysTran = new ButtWysTran(bankomat1);
-		info = new InfoButton(bankomat1);
+		b1 = new Button01WsunKarte(bankomat1,karta);
+		b2 = new Button02Wyplac(bankomat1);
+		b3 = new Button03Wplac(this, bankomat1);
+		b4 = new Button04StanKonta(bankomat1);
+		b5 = new Button05Trasakcje(bankomat1);
+		b6 = new Button06Info(bankomat1);
 		
 		setLayout(new GridLayout(6,1));
-		setPreferredSize(new Dimension(WIDTH, HEIGHT));
-		add(zatwierdz);
-		add(wyplata);
-		add(wplata);
-		add(stanKonta);
-		add(WysTran);
-		add(info);
+		setPreferredSize(new Dimension(300, 300));
+		add(b1);
+		add(b2);
+		add(b3);
+		add(b4);
+		add(b5);
+		add(b6);
 	}
 }

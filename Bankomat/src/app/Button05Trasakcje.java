@@ -9,18 +9,19 @@ import javax.swing.JOptionPane;
 
 import bankomat.Bankomat;
 
-public class ButtWysTran extends JButton implements ActionListener{
+
+public class Button05Trasakcje extends JButton implements ActionListener{
 
 	private Bankomat bankomat1;
 	private boolean ctrl;
 	private int pin;
 	
-	ButtWysTran() {
+	Button05Trasakcje() {
 		super("Transakcje");
 		addActionListener(this);
 	}
 
-	ButtWysTran(Bankomat bankomat1) {
+	Button05Trasakcje(Bankomat bankomat1) {
 		super("Transakcje");
 		this.bankomat1 = bankomat1;
 		addActionListener(this);
