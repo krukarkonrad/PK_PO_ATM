@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import bankomat.Bankomat;
 import bankomat.Karta;
 
+
 public class ButtonPanel extends JPanel {
 	public static final int HEIGHT = 100;
 	public static final int WIDTH = 300;

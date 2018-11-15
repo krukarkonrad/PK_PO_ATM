@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import bankomat.Bankomat;
 import bankomat.Karta;
 
+
 public class AppOkn extends JFrame{
 	
 	public AppOkn() {

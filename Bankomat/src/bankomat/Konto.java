@@ -1,5 +1,6 @@
 package bankomat;
 
+
 public class Konto {
     private String wlasciciel;
     private int numer;

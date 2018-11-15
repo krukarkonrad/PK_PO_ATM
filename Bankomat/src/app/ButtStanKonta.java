@@ -4,6 +4,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import bankomat.Bankomat;
 
+
 public class ButtStanKonta extends JButton implements ActionListener{
 
 	private Bankomat bankomat1;

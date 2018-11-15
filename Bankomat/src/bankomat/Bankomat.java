@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+
 public class Bankomat extends UrzadzenieElektrczne {
 	private InfoBox infoBox = new InfoBox();
 	private Karta karta;

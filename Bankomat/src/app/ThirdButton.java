@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import bankomat.Bankomat;
 import bankomat.Karta;
 
+
 class ThirdButton extends JButton implements ActionListener {
 
 	private JPanel buttonPanel;

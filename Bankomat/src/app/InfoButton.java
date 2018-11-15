@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import bankomat.Bankomat;
 
+
 public class InfoButton extends JButton implements ActionListener {
 
 private Bankomat bankomat1;

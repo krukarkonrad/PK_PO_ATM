@@ -1,5 +1,6 @@
 package bankomat;
 
+
 public class Karta {
     private Konto konto;
     private int pin;

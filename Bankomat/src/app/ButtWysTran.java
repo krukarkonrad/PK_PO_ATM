@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 import bankomat.Bankomat;
 
+
 public class ButtWysTran extends JButton implements ActionListener{
 
 	private Bankomat bankomat1;

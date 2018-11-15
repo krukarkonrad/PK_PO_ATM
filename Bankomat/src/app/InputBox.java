@@ -2,6 +2,7 @@ package app;
 
 import javax.swing.JOptionPane;
 
+
 public interface InputBox {
 	
     public static void infoBox(String infoMessage, String titleBar)

@@ -6,6 +6,7 @@ import javax.swing.*;
 import infoBox.InfoBox;
 import bankomat.Bankomat;
 
+
 class FirstButton extends JButton implements ActionListener, InputBox {
 
 	private InfoBox infoBox = new InfoBox();

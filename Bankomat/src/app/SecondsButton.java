@@ -6,6 +6,7 @@ import infoBox.InfoBox;
 import bankomat.Bankomat;
 
 
+
 class SecondButton extends JButton implements ActionListener {
 	
 	private InfoBox infoBox = new InfoBox();
