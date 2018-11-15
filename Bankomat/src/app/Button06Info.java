@@ -22,14 +22,7 @@ private Bankomat bankomat1;
 		super("Info");
 		this.bankomat1 = bankomat1;
 		addActionListener(this);
-	}
-	
-	
-    public static void infoBox(String infoMessage, String titleBar)
-    {
-        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
-    }
-        
+	}       
     
 	@Override
 	public void actionPerformed(ActionEvent e) {

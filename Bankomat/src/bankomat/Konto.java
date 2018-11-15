@@ -34,11 +34,11 @@ public class Konto {
     }
    
    
-    public void wyswietlTransakcje() {
-        for(int i =0; i<=index;i++) {
-            //System.out.println(archiwum[i]);
-        }
-    }
+//    public void wyswietlTransakcje() {
+//        for(int i =0; i<=index;i++) {
+//            System.out.println(archiwum[i]);
+//        }
+//    }
    
    
     public String wplata(double kwota) {

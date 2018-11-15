@@ -1,8 +1,8 @@
 package app;
-//zatwierdzenie
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import infoBox.InfoBox;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -14,6 +14,7 @@ import bankomat.Karta;
 
 class Button01WsunKarte extends JButton implements ActionListener {
 
+    private InfoBox infoBox = new InfoBox();
 	private JPanel buttonPanel;
 	private Bankomat bankomat1;
 	private Karta karta;
@@ -30,12 +31,7 @@ class Button01WsunKarte extends JButton implements ActionListener {
 		this.karta=karta;
 		addActionListener(this);
 	}
-	
-    public static void infoBox(String infoMessage, String titleBar)
-    {
-        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
-    }
-    
+	    
     public void inputBox() throws BankomatExp, BankomatExpTwo {
     	String temp;
     	temp= JOptionPane.showInputDialog(null,"Wprowadz pin");
@@ -43,7 +39,7 @@ class Button01WsunKarte extends JButton implements ActionListener {
     	try {
     	this.pin = Integer.parseInt(temp);
     	}catch (NumberFormatException e) {
-    		infoBox("Pin sklada siê z cyfr", "Blad");
+    		infoBox.InfoBox("Pin sklada siê z cyfr", "Blad");
     	}
     	
     	if(this.pin==0) {
@@ -64,9 +60,7 @@ class Button01WsunKarte extends JButton implements ActionListener {
 		} catch (BankomatExp | BankomatExpTwo e1) {
 			
 		}
-
 		bankomat1.wlozKarte(karta, pin);
-		String info = karta.odblokuj(pin);
-		infoBox(info,"Rezultat");
+		infoBox.InfoBox(karta.odblokuj(pin),"Rezultat");
 	}
 }

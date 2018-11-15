@@ -17,7 +17,6 @@ public interface InputBox {
     	kwota = Double.parseDouble(temp);
     	}catch (NumberFormatException e) {
     		infoBox("Proszê o cyfry lub liczbê dodatni¹", "Blad");
-
     		return(-1);
     	}
     	return(kwota);
