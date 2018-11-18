@@ -71,5 +71,5 @@ local.properties
 .apt_generated
 
 .sts4-cache/
-
+.project
 # End of https://www.gitignore.io/api/eclipse
